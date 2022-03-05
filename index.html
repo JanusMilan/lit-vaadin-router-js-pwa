@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo</title>
+
+    <link rel="icon" type="image/png" href="./img/icons/favicon.png" />
+
+    <meta name="theme-color" content="#2A3443" />
+    <meta name="description" content="Tutorial app." />
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="./img/icons/icon-144x144.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-title" content="TutorialApp" />
+
+    <!-- Manifest immer im 'head' -->
+    <link rel="manifest" href="./src/manifest.webmanifest" />
+  </head>
+
+    <body>
+      
+      <main>
+        <header>
+          <h1>Todo app</h1>
+        </header>
+        <!-- Für Routing -->
+        <!-- Die Links für Unterseiten werden NICHT hier sondern im 'base-view' verbaut -->
+        <div id="outlet"></div>
+      </main>
+
+      <!-- Rollup wird Routing in Build aufnehmen-->
+      <script type="module" src="./src/views/index.js" defer></script>
+      <!--    - SW Registrierung      - SW Life Cycle -->
+      <script src="/src/views/app.js" data-service-worker="sw.js"></script>
+    </body>
+
+</html>
